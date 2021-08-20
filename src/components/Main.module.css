@@ -1,0 +1,51 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal{
+    background: rgb(188, 188, 209);
+    min-height: 600px;
+    /* min-width: 800px;
+    max-width: 800px; */
+}
+
+.closeButton {
+    position: absolute;
+    right:5px;
+    top: 105px;
+    /* background: tomato; */
+    background: none;
+    border: none;
+}
+
+.closeButton:hover {
+    /* color: tomato; */
+    cursor: pointer;
+    background: tomato;
+}
+
+.todo_item {
+    position: absolute;
+    cursor: move;
+    min-width: 215px;
+    color: black;
+    padding: 1em;
+    border-radius: 5px;
+}
+.delete {
+    position: absolute;
+    right:5px;
+    top: 5px;
+    /* background: tomato; */
+    background: none;
+    border: none;
+}
+
+.delete:hover {
+    /* color: tomato; */
+    cursor: pointer;
+    background: tomato;
+
+}
