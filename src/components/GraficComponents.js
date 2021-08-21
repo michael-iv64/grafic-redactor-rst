@@ -3,7 +3,7 @@ import { createElementAction, saveProject } from '../redux/actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Draggable from 'react-draggable'
-import { Button, RadioGroup, RadioButton, Select } from '@design-system-rt/rtk-ui-kit';
+import { Button, RadioGroup, RadioButton, Select, Checkbox } from '@design-system-rt/rtk-ui-kit';
 import { v4 as uuidv4 } from 'uuid'
 import { randomColor } from 'randomcolor'
 
@@ -118,14 +118,14 @@ const GraficComponents = () => {
                             }) 
                 }
                 <div><RadioGroup>
-                    {/* <RadioButton onChange={function noRefCheck() { }} value="primary1" name={item.name}> primary1</RadioButton>
-                    <RadioButton onChange={function noRefCheck() { }} value="primary2" name={item.name}>primary2</RadioButton>
-                    <RadioButton onChange={function noRefCheck() { }} value="secondary1" name={item.name}>secondary1</RadioButton>
-                    <RadioButton onChange={function noRefCheck() {updateColor() }} value="secondary2" name={item.name}>secondary2</RadioButton> */}
+                    <RadioButton onChange={function noRefCheck() { }} value="primary1" name='secondary'> primary1</RadioButton>
+                    {/* <RadioButton onChange={function noRefCheck() { }} value="primary2" name={item.name}>primary2</RadioButton> */}
+                    {/* <RadioButton onChange={function noRefCheck() { }} value="secondary1" name={item.name}>secondary1</RadioButton> */}
+                    {/* <RadioButton onChange={function noRefCheck() {updateColor() }} value="secondary2" name={item.name}>secondary2</RadioButton> */}
                 </RadioGroup></div>
-                <Button color='secondary2' onClick={newElem} style={{ 'margin': '20px' }}>Добавить в Redux</Button>
-                <Button color='secondary1' onClick={saveToServer} style={{ 'margin': '20px' }}>Сохранить на сервер</Button>
-
+                <Button size='large' color='secondary2' onClick={newElem} style={{ 'margin': '20px' }}>Добавить в Redux</Button>
+                <Button size='medium' shape='rounded' color='secondary1' onClick={saveToServer} style={{ 'margin': '20px' }}>Сохранить на сервер</Button>
+                    
                 
                 <Select
                     style={{ 'margin': '20px' }}
@@ -151,6 +151,12 @@ const GraficComponents = () => {
                 />
                 </div>
                 <div>
+                <Checkbox
+                    name="example"
+                    onChange={function noRefCheck(){}}
+                    >
+                    В Личный кабинет
+                    </Checkbox>
         
             </div>
             {/* <div className={styles.leftBlock}>left</div>

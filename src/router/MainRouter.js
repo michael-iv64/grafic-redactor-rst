@@ -10,6 +10,7 @@ import { TabsClassicGroup, TabsClassicItem ,TabsClassicPanel, Desktop, Internet,
 
 import Main from '../components/Main';
 import App from '../App'
+import AddElem from '../components/AddElem';
 // import Tabs from '../UI/Tabs';
 
 
@@ -69,7 +70,7 @@ class MainRouter extends Component {
                                         // disabled
                                         icon={<Promocode />}
                                         index="3"
-                                        label="Прочее"
+                                        label="Добавить элемент"
                                         style={{marginRight: '50px'}}    
                                             
                                         />
@@ -86,6 +87,10 @@ class MainRouter extends Component {
                                 <Route  path="/second">
                                 {/* <Second /> */}
                                 <App />
+                               </Route>
+                                <Route  path="/third">
+                                {/* <Second /> */}
+                                <AddElem />
                                </Route>
                             {this.props.auth.token.length === 0
                                 ?

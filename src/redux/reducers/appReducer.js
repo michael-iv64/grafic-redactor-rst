@@ -2,6 +2,16 @@ import { SHOW_LOADER, HIDE_LOADER, SHOW_ALERT, HIDE_ALERT } from '../constants/c
 const initialState = {
     loading: false,
     alert: null,
+    addButtons: true,
+    addIcons: false,
+    addcCheckboses: false,
+    addRadiogroup: false,
+    addMultiselect: false,
+    addTypografic: false,
+    addInputs: false,
+    addTabs: false,
+    addHolsts: false
+    
 }
 export const appReducer = (state = initialState, action) => {
     switch (action.type) {
