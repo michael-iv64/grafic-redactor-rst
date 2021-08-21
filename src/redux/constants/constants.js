@@ -1,5 +1,7 @@
 export const CREATE_POST = 'POST/CREATE_POST';
 
+export const SAVE_PROJECT = 'GRAF/SAVE_PROJECT';
+
 export const SHOW_LOADER = 'APP/SHOW_LOADER';
 export const HIDE_LOADER = 'APP/HIDE_LOADER';
 export const SHOW_ALERT = 'APP/SHOW_ALERT';

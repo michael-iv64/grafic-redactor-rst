@@ -33,7 +33,7 @@ ReactDOM.render(
   //   }
   // }}>
     <Provider store={store}>
-    <ThemeProvider themeName="light">
+    <ThemeProvider themeName="dark">
       <MainRouter />
         {/* <App /> */}
       </ThemeProvider>
