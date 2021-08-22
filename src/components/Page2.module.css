@@ -104,3 +104,27 @@ background: '#9466FF';
 width: 79px;
 height: 27px;
 }
+
+.todo_item {
+    position: absolute;
+    cursor: move;
+    min-width: 150px;
+    color: black;
+    padding: 1em;
+    border-radius: 5px;
+}
+.delete {
+    position: absolute;
+    right:5px;
+    top: 5px;
+    /* background: tomato; */
+    background: none;
+    border: none;
+}
+
+.delete:hover {
+    /* color: tomato; */
+    cursor: pointer;
+    background: tomato;
+
+}

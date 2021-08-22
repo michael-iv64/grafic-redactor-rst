@@ -8,49 +8,49 @@ import styles from './AddButtons.module.css'
 
 const AddButtons = () => {
     const dispatch = useDispatch()
-
-    const data  = [{
+    const data  = {
         id: uuidv4(),
         elem: 'button', 
         item:'',
         color: 'primary1',
-        size: '',
+        size: 'large',
         name: 'primary1',
+        shape: 'rounded',
         defaultPos: {
             x: 200,
             y: 200
         }
-    }]
-
-    // useEffect(() => {
-    //     localStorage.setItem('items', JSON.stringify(items))
-    // }, [items])
+    }
 
     const [elem, setElem] = useState(data)
+    // useEffect(() => {
+    //     // localStorage.setItem('items', JSON.stringify(items))
+
+    // }, [newArr])
+
 
     function updateColor(col) {
-        let newArr = [...data]
+        let newArr = {...data, color: col}
 
         console.log('newArr1',newArr)
-        newArr.color = col
-        // setElem(newArr)
-        console.log('newArr2',newArr)
-        console.log(col)
+        // data.color = col
+        return setElem(newArr)
+        // console.log('newArr2',newArr)
+        // console.log(col)
+        // console.log('data',data)
     }
 
     function updateSize(siz) {
-        let newArr = [...data]
-        newArr.size = siz
-        setElem(newArr)
+        let newArr = {...data, size: siz}
+       return setElem(newArr)
     }
     function updateShape(s) {
-        let newArr = [...data]
-        newArr.shape = s
-        setElem(newArr)
+        let newArr = {...data, shape: s}
+        return setElem(newArr)
     }
 
 
-    function addElement(elem) {
+    function addElement() {
         dispatch(createElementAction(elem))
     }
     console.log('elem',elem)
@@ -62,7 +62,7 @@ const AddButtons = () => {
                     <div className={styles.minwrapper}><RadioButton  value="primary1" name='primary1'></RadioButton><div className={styles.primary1}></div></div>
                     <div className={styles.minwrapper}><RadioButton  value="primary2" name="primary2"></RadioButton><div className={styles.primary2}></div></div>
                     <div className={styles.minwrapper}><RadioButton  value="secondary1" name="secondary1"></RadioButton><div className={styles.secondary1}></div></div>
-                    <div className={styles.minwrapper}><RadioButton  value="secondary2" name="secondary2"></RadioButton><div className={styles.primary2}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="secondary2" name="secondary2"></RadioButton><div className={styles.secondary2}></div></div>
                         </RadioGroup>
                         <h4>Размер</h4> 
                     <RadioGroup onChange={function noRefCheck(e) { updateSize(e) }} value="large">

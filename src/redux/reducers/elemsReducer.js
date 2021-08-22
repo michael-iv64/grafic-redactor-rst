@@ -4,10 +4,12 @@ const initialState = {
         {
         elem: "button", 
         color: "secondary2",
-        defaultPos: {x: 100, y: 100},
-        id: "1",
+        defaultPos: {x: 500, y: 100},
+        id: "1er",
         item: "",
         name: "secondary2",
+        size: 'large',
+        shape:'geometric',
         },
         {
         elem: "switch", 
