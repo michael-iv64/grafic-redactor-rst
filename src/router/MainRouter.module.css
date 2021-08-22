@@ -1,3 +1,7 @@
+body {
+    padding: 0;
+    margin: 0;
+}
 .main{
     text-align: center;
 }
@@ -18,7 +22,11 @@ li{
     /* margin-left: 20px; */
     /* background: rgb(241, 243, 248); */
     background: #272F3D;
+    background: #ffffff;
+
     border: solid 2px #FF4F12;
+    border: solid 2px #363231;
+
     
     
 
@@ -58,4 +66,5 @@ li{
     border-radius: 5px;
     /* border: 1px solid black; */
     margin-top: 10px;
+    /* font-size:x-large; */
 }

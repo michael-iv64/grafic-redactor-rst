@@ -68,6 +68,7 @@ const GraficComponents = () => {
         let newArray = [...items]
         newArray[index].defaultPos = { x: data.x, y: data.y } // data - atribyte draggable
         setItems(newArray)
+        console.log('newArray', newArray)
     }
 
     const deleteNode = (id) => {

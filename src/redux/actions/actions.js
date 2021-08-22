@@ -1,4 +1,4 @@
-import { CREATE_POST, HIDE_LOADER, SHOW_LOADER, SHOW_ALERT, HIDE_ALERT, UPDATE_ELEMENT, CREATE_ELEMENT, SAVE_PROJECT } from "../constants/constants";
+import { CREATE_POST, HIDE_LOADER, SHOW_LOADER, SHOW_ALERT, HIDE_ALERT, UPDATE_ELEMENT, CREATE_ELEMENT, SAVE_PROJECT, SWITCH_ELEMENT, SWITCH_BUTTON, SWITCH_ICONS } from "../constants/constants";
 import axios from 'axios'
 
 
@@ -37,6 +37,24 @@ export function hideAlert() {
 }
 
 // GRAFIC REDACTOR 
+export function switchElement(data) {
+    return {
+        type: SWITCH_ELEMENT,
+        payload: data
+    }
+}
+export function switchBattonAction() {
+    return {
+        type: SWITCH_BUTTON,
+    }
+}
+export function switchIconsAction() {
+    return {
+        type: SWITCH_ICONS,
+    }
+}
+
+
 
 export function updateElement(data) {
     return {

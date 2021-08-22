@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Logo from '../img/logo.jpg';
 
 import styles from './MainRouter.module.css';
 
@@ -11,6 +12,7 @@ import { TabsClassicGroup, TabsClassicItem ,TabsClassicPanel, Desktop, Internet,
 import Main from '../components/Main';
 import App from '../App'
 import AddElem from '../components/AddElem';
+import Page2 from '../components/Page2';
 // import Tabs from '../UI/Tabs';
 
 
@@ -26,22 +28,24 @@ class MainRouter extends Component {
             <BrowserRouter>
             <div className = {styles.main}>
                 <nav>
-                    <ul className={styles.header}>
+                        <ul className={styles.header}>
+                        <img src={Logo} alt= "logo" style= {{height:'50px', marginRight: '20px'}}></img> 
+                            
                         <li>
                                 <Link to="/"
                                     className={styles.navWrapper}
                                 >
                                     <p className={styles.forLink}>
                                     <TabsClassicItem
-                                        icon={<Internet />}
+                                        // icon={<Internet />}
                                         index="0"
-                                        label="Графический редактор"
+                                        label="RT GRAF"
                                         style={{marginRight: '50px'}}    
                                                     />
                                     </p>
                                 </Link>
                         </li><br />
-                        <li>
+                        {/* <li>
                                 <Link to="/second"
                                     className={styles.navWrapper}
                                 >
@@ -50,7 +54,7 @@ class MainRouter extends Component {
                                        <TabsClassicItem
                                             icon={<Desktop />}
                                             index="1"
-                                            label="Компоненты пока в куче"
+                                            label="Страница 2"
                                             style={{marginRight: '50px'}}    
 
                                         >
@@ -59,8 +63,8 @@ class MainRouter extends Component {
                                     </p>
                                 </Link>
                                         
-                            </li><br />
-                        <li>
+                            </li><br /> */}
+                        {/* <li>
                                 <Link to="/third"
                                     className={styles.navWrapper}
                                 >
@@ -78,7 +82,7 @@ class MainRouter extends Component {
                                     </p>
                                 </Link>
                                         
-                            </li><br />
+                            </li><br /> */}
                             
                             
                 
@@ -86,7 +90,8 @@ class MainRouter extends Component {
                     <Switch>
                                 <Route  path="/second">
                                 {/* <Second /> */}
-                                <App />
+                                {/* <App /> */}
+                                {/* <Page2 /> */}
                                </Route>
                                 <Route  path="/third">
                                 {/* <Second /> */}
@@ -95,7 +100,8 @@ class MainRouter extends Component {
                             {this.props.auth.token.length === 0
                                 ?
                                 <Route path="/">
-                                    <Main />
+                                    {/* <Main /> */}
+                                    <Page2 />
                                     {/* <SignInForm /> */}
                                 </Route>
                                 :

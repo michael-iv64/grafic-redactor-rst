@@ -19,7 +19,7 @@ const store = createStore(rootReducer, compose(
   applyMiddleware(
       thunk
   ),
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ))
 
 
@@ -33,7 +33,7 @@ ReactDOM.render(
   //   }
   // }}>
     <Provider store={store}>
-    <ThemeProvider themeName="dark">
+    <ThemeProvider themeName="light">
       <MainRouter />
         {/* <App /> */}
       </ThemeProvider>

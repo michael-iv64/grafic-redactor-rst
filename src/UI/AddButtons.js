@@ -1,34 +1,90 @@
-import React from 'react';
+import React, { useState, useEffect}from 'react';
 import { Button, RadioGroup, RadioButton, Select, Checkbox } from '@design-system-rt/rtk-ui-kit';
+import { switchBattonAction, switchIconsAction , createElementAction} from '../redux/actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { v4 as uuidv4 } from 'uuid'
+import styles from './AddButtons.module.css'
 
 const AddButtons = () => {
+    const dispatch = useDispatch()
 
-    function addElement(t) {
-        console.log('addElement',t)
+    const data  = [{
+        id: uuidv4(),
+        elem: 'button', 
+        item:'',
+        color: 'primary1',
+        size: '',
+        name: 'primary1',
+        defaultPos: {
+            x: 200,
+            y: 200
+        }
+    }]
+
+    // useEffect(() => {
+    //     localStorage.setItem('items', JSON.stringify(items))
+    // }, [items])
+
+    const [elem, setElem] = useState(data)
+
+    function updateColor(col) {
+        let newArr = [...data]
+
+        console.log('newArr1',newArr)
+        newArr.color = col
+        // setElem(newArr)
+        console.log('newArr2',newArr)
+        console.log(col)
     }
+
+    function updateSize(siz) {
+        let newArr = [...data]
+        newArr.size = siz
+        setElem(newArr)
+    }
+    function updateShape(s) {
+        let newArr = [...data]
+        newArr.shape = s
+        setElem(newArr)
+    }
+
+
+    function addElement(elem) {
+        dispatch(createElementAction(elem))
+    }
+    console.log('elem',elem)
     return (
         <div>
             <div>
-                        <h4>Colors</h4> 
-                    <RadioGroup onChange={function noRefCheck(e) { addElement(e) }} value="primary1">
-                    <RadioButton  value="primary1" name='primary1'>primary1</RadioButton>
-                    <RadioButton  value="primary2" name="primary2">primary2</RadioButton>
-                    <RadioButton  value="secondary1" name="secondary1">secondary1</RadioButton>
-                    <RadioButton  value="secondary2" name="secondary2">secondary2</RadioButton>
+                        <h4>Цвета</h4> 
+                    <RadioGroup onChange={function noRefCheck(e) { updateColor(e) }} value="primary1">
+                    <div className={styles.minwrapper}><RadioButton  value="primary1" name='primary1'></RadioButton><div className={styles.primary1}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="primary2" name="primary2"></RadioButton><div className={styles.primary2}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="secondary1" name="secondary1"></RadioButton><div className={styles.secondary1}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="secondary2" name="secondary2"></RadioButton><div className={styles.primary2}></div></div>
                         </RadioGroup>
-                        <h4>Size</h4> 
-                    <RadioGroup onChange={function noRefCheck(e) { addElement(e) }} value="large">
-                    <RadioButton  value="large" name='large'>large</RadioButton>
-                    <RadioButton  value="medium" name="medium">medium</RadioButton>
-                    <RadioButton  value="small" name="small">small</RadioButton>
+                        <h4>Размер</h4> 
+                    <RadioGroup onChange={function noRefCheck(e) { updateSize(e) }} value="large">
+                    <div className={styles.minwrapper}><RadioButton  value="large" name='large'></RadioButton><div className={styles.large}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="medium" name="medium"></RadioButton><div className={styles.medium}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="small" name="small"></RadioButton><div className={styles.small}></div></div>
                         </RadioGroup>
-                        <h4>Shape</h4> 
-                    <RadioGroup onChange={function noRefCheck(e) { addElement(e) }} value="geometric">
-                    <RadioButton  value="geometric" name='geometric'>geometric</RadioButton>
-                    <RadioButton  value="rounded" name="rounded">rounded</RadioButton>
-                    <RadioButton  value="circular" name="circular">circular</RadioButton>
+                        <h4>Форма</h4> 
+                    <RadioGroup onChange={function noRefCheck(e) { updateShape(e) }} value="geometric">
+                    <div className={styles.minwrapper}><RadioButton  value="geometric" name='geometric'></RadioButton><div className={styles.geometric}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="rounded" name="rounded"></RadioButton><div className={styles._rounded}></div></div>
+                    <div className={styles.minwrapper}><RadioButton  value="circular" name="circular"></RadioButton><div className={styles.circular}></div></div>
                         </RadioGroup>
-                    </div> 
+            </div>
+            <Button
+                    style={{ 'margin': '20px' }}
+                color="secondary2"
+                onClick={addElement}
+                    // onClsecondary => setOpen(!open)}
+                >
+                    Добавить элемент в проект
+                </Button>
         </div>
     );
 };

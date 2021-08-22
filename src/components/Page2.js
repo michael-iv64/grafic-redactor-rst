@@ -1,19 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { switchBattonAction, switchIconsAction , createElementAction} from '../redux/actions/actions';
 
-import styles from './Main.module.css'
+import styles from './Page2.module.css'
 import AddButtons from '../UI/AddButtons';
 import AddIcons from '../UI/AddIcons';
+import AddInputs from '../UI/AddInputs';
+import AddMultiselects from '../UI/AddMultiselects';
 
 import { Button, RadioGroup, RadioButton, Select, Checkbox } from '@design-system-rt/rtk-ui-kit';
 
-const AddElem = () => {
+const Page2 = () => {
     const dispatch = useDispatch()
-    const addButtons = useSelector(state => state.app.addButtons)
-    const addIcons = useSelector(state => state.app.addIcons)
+    const [addButtons, setAddBattons] = useState(false)
+    const [addIcons, setAddIcons] = useState(false)
+    const [addInputs, setAddInputs] = useState(false)
+    const [addMultiselects, setAddMultiselects] = useState(false)
     // const switchElems = useSelector(state => state.app)
-  
+
+    const switchButtons = () => {
+        setAddBattons(!addButtons)
+    }
+    const switchIcons = () => {
+        setAddIcons(!addIcons)
+
+    }
+    const switchInputs = () => {
+        setAddInputs(!addInputs)
+
+    }
+    const switchMultiselects = () => {
+        setAddMultiselects(!addMultiselects)
+
+    }
 
     //   --ф-ия выбора элемента  ---
     const switchElement = (key) => {
@@ -54,7 +73,7 @@ const AddElem = () => {
     return (
         <>
             <div className={styles.miniHeader}>
-            <Select
+            {/* <Select
                     style={{ 'margin': '5px' , width: '200px'}}
                     // color='inherit'
                     label="Холсты и табы"
@@ -129,15 +148,38 @@ const AddElem = () => {
                         value: 'иконки'
                     }
                     ]}
-                />
+                /> */}
             </div>
             <div className={styles.addElement}>
                 <div className={styles.leftBlock}>
-                    <h4>Рабочее пространство</h4>
+                    <h4>Рабочее пространство Page2 </h4>
                 </div>
                 <div className={styles.rightBlock}>
-                    {addButtons ? <AddButtons /> : null}
-                    {addIcons ? <AddIcons /> : null}
+                    <div className={styles.accordion}><h3>Холсты</h3></div>
+                    
+                    <div className={styles.accordion}  >
+                        <h3 onClick={switchIcons}>Иконки</h3>
+                        {addIcons ? <AddIcons /> : null}
+                    
+                    </div>
+                    <div className={styles.accordion} >
+                        <h3 onClick={switchButtons}>Кнопки</h3>
+                        {addButtons ? <AddButtons /> : null}
+
+                    </div>
+                    <div className={styles.accordion} >
+                        <h3 onClick={switchMultiselects}>Множественный выбор</h3>
+                        {addMultiselects ? <AddMultiselects /> : null}
+                    
+                    </div>
+                    <div className={styles.accordion} >
+                        <h3 onClick={switchInputs}>Поля ввода</h3>
+                        {addInputs ? <AddInputs /> : null}
+
+                    </div>
+                    <div className={styles.accordion}><h3>Чекбоксы</h3></div>
+                    <div className={styles.accordion}><h3>Радио-кнопки</h3></div>
+                    {/* {addButtons ? <AddButtons /> : null} */}
                     {/* <AddButtons /> */}
                     </div>
                 </div>
@@ -146,4 +188,4 @@ const AddElem = () => {
     );
 };
 
-export default AddElem;
+export default Page2;

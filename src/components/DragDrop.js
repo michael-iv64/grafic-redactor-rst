@@ -47,6 +47,7 @@ function DragDrop() {
     }
     const updatePos = (data, index) => {
         let newArray = [...items]
+        // console.log(newArray)
         newArray[index].defaultPos = { x: data.x, y: data.y } // data - atribyte draggable
         setItems(newArray)
     }

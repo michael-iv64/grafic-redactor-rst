@@ -1,0 +1,62 @@
+.primary1 {
+    background: #9466FF;
+    width: 160px;
+    height: 55px;
+    }
+.minwrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    padding-top: -10px;
+}  
+
+.primary2 {
+    background: #FF5E2D;
+    width: 160px;
+    height: 55px;
+}
+.secondary1 {
+    background: #16D9A6;
+    width: 160px;
+    height: 55px;
+}
+.secondary2 {
+    background: #40A2FF;
+    width: 160px;
+    height: 55px;
+}
+.large {
+    background: #E5E5E5;
+    width: 140px;
+    height:56px;
+    border-radius: 8px
+}
+.medium {
+    background: #E5E5E5;
+    width: 120px;
+    height: 48px;
+    border-radius: 8px;
+}
+.small {
+    background: #E5E5E5;
+    width: 80px;
+    height: 32px;
+    border-radius: 8px;
+}
+.geometric {
+    background: #E5E5E5;
+    width: 120px;
+    height: 48px;
+}
+._rounded {
+    background: #E5E5E5;
+    width: 120px;
+    height: 48px;
+    border-radius: 8px;
+}
+.circular{
+    background: #E5E5E5;
+    width: 120px;
+    height: 56px;
+    border-radius: 50px;
+}

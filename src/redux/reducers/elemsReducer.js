@@ -1,22 +1,22 @@
 import { CREATE_ELEMENT } from "../constants/constants"
 const initialState = {
     elems: [
-        // {
-        // elem: "button", 
-        // color: "secondary2",
-        // defaultPos: {x: 100, y: 100},
-        // id: "1",
-        // item: "",
-        // name: "secondary2",
-        // },
-        // {
-        // elem: "switch", 
-        // color: "secondary2",
-        // defaultPos: {x: 200, y: 200},
-        // id: "1",
-        // item: "",
-        // name: "secondary2",
-        // },
+        {
+        elem: "button", 
+        color: "secondary2",
+        defaultPos: {x: 100, y: 100},
+        id: "1",
+        item: "",
+        name: "secondary2",
+        },
+        {
+        elem: "switch", 
+        color: "secondary2",
+        defaultPos: {x: 200, y: 200},
+        id: "1",
+        item: "",
+        name: "secondary2",
+        },
         // {
         // elem: "checkboses", 
         // color: "secondary2",

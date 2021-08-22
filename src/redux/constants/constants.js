@@ -2,6 +2,9 @@ export const CREATE_POST = 'POST/CREATE_POST';
 
 export const SAVE_PROJECT = 'GRAF/SAVE_PROJECT';
 
+export const SWITCH_ELEMENT = 'APP/SWITCH_ELEMENT'
+export const SWITCH_BUTTON = 'APP/SWITCH_BUTTON'
+export const SWITCH_ICONS = 'APP/SWITCH_ICONS'
 export const SHOW_LOADER = 'APP/SHOW_LOADER';
 export const HIDE_LOADER = 'APP/HIDE_LOADER';
 export const SHOW_ALERT = 'APP/SHOW_ALERT';

@@ -69,6 +69,7 @@
 }
 .addElement {
     background: #272F3D;
+    /* background: #ffffff; */
     border: solid 2px #FF4F12;
     color: cornsilk;
     min-height: 600px;
